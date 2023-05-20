@@ -14,7 +14,7 @@ class App extends Component {
   }
   constructor() {
     super();
-    this.drone = new window.Scaledrone("YOUR_CHANNEL_ID", {
+    this.drone = new window.Scaledrone("BOLaSmXEBj71ejxE", {
       data: this.state.member
     });
     this.drone.on('open', error => {
