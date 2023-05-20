@@ -12,15 +12,14 @@ export function randomName() {
     ];
     const nouns = [
       "Apple", "Banana", "Orange", "Grape", "Mango", "Blueberry", "Cherry", "Strawberry",
-      "Watermelon", "Pineapple", "Plum", "Peach", "Apricot", "Fig", "Pear", "Coconut",
-      "Kiwi", "Raspberry", "Blackberry", "Melon", "Lemon", "Avocado", "Pomegranate", "Quince",
-      "Tomato", "Cucumber", "Carrot", "Broccoli", "Cauliflower", "Potato", "Onion", "Garlic",
-      "Mushroom", "Zucchini", "Corn", "Pea", "Spinach", "Lettuce", "Cabbage", "Kale",
-      "Radish", "Asparagus", "Beet", "Parsnip", "Pumpkin", "Squash", "Turnip", "Artichoke",
-      "Peanut", "Almond", "Cashew", "Walnut", "Pistachio", "Hazelnut", "Macadamia", "Chestnut",
-      "Sesame", "Flaxseed", "Quinoa", "Rice", "Oats", "Barley", "Wheat", "Millet",
-      "Bulgur", "Couscous", "Spaghetti", "Linguine", "Fettuccine", "Penne", "Ravioli", "Lasagna",
-      "Pizza"
+"Watermelon", "Pineapple", "Plum", "Peach", "Apricot", "Chocolate Truffle", "Pear", "Coconut",
+"Kiwi", "Raspberry", "Blackberry", "Melon", "Lemon", "Avocado", "Pomegranate", "Quince",
+"Tomato", "Cucumber", "Carrot", "Broccoli", "Cauliflower", "Potato", "Onion", "Garlic",
+"Mushroom", "Eggplant", "Corn", "Pea", "Spinach", "Lettuce", "Cabbage", "Kale",
+"Cauliflower", "Sweet Potato", "Pumpkin", "Butternut Squash", "Radish", "Artichoke",
+"Peanut", "Almond", "Cashew", "Walnut", "Pistachio", "Hazelnut", "Macadamia", "Chestnut",
+"Sesame", "Chia Seeds", "Quinoa", "Rice", "Oats", "Barley", "Wheat", "Gummy Worms",
+"Spaghetti Squash", "Fettuccine", "Ravioli", "Lasagna", "Pizza"
     ];
 
     const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
