@@ -34,11 +34,13 @@ class App extends Component {
   }
 
   render() {
+    const { messages, member } = this.state;
+  
     return (
       <div className="App">
-          <Messages
-          messages={this.state.messages}
-          currentMember={this.state.member}
+        <Messages
+          messages={messages}
+          currentMember={member}
         />
         <Input
           onSendMessage={this.onSendMessage}
@@ -57,4 +59,4 @@ class App extends Component {
 
 }
 
-export default App;
+export default App; 
