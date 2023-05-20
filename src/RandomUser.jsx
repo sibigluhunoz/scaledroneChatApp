@@ -1,14 +1,14 @@
 export function randomName() {
     const adjectives = [
-      "happy", "sad", "angry", "content", "excited", "calm", "peaceful", "hopeful",
-      "melancholy", "reflective", "serene", "joyful", "anxious", "blessed", "playful",
-      "determined", "grateful", "nostalgic", "blissful", "satisfied", "energetic",
-      "thoughtful", "optimistic", "tranquil", "loving", "courageous", "curious",
-      "inspired", "tender", "mellow", "dreamy", "fearful", "rejuvenated", "romantic",
-      "thankful", "gloomy", "serene", "pensive", "sympathetic", "gleeful", "irritable",
-      "contented", "receptive", "fascinated", "comfortable", "spirited", "humble",
-      "silly", "restful", "vibrant", "sentimental", "fulfilled", "cheerful", "graceful",
-      "merry", "mournful", "refreshed", "enchanting", "easygoing", "insightful"
+      "Happy", "Sad", "Angry", "Content", "Excited", "Calm", "Peaceful", "Hopeful",
+"Melancholy", "Reflective", "Serene", "Joyful", "Anxious", "Blessed", "Playful",
+"Determined", "Grateful", "Nostalgic", "Blissful", "Satisfied", "Energetic",
+"Thoughtful", "Optimistic", "Tranquil", "Loving", "Courageous", "Curious",
+"Inspired", "Tender", "Mellow", "Dreamy", "Fearful", "Energized", "Romantic",
+"Thankful", "Gloomy", "Serene", "Contemplative", "Sympathetic", "Ecstatic", "Irritable",
+"Contented", "Receptive", "Fascinated", "Comfortable", "Spirited", "Humble",
+"Silly", "Restful", "Vibrant", "Sentimental", "Fulfilled", "Cheerful", "Graceful",
+"Merry", "Mournful", "Refreshed", "Enchanting", "Easygoing", "Insightful"
     ];
     const nouns = [
       "Apple", "Banana", "Orange", "Grape", "Mango", "Blueberry", "Cherry", "Strawberry",
@@ -25,7 +25,7 @@ export function randomName() {
 
     const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
     const noun = nouns[Math.floor(Math.random() * nouns.length)];
-    return adjective + noun;
+    return adjective + " " + noun;
   }
   
  export function randomColor() {
