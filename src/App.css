@@ -102,3 +102,40 @@ button {
   margin-top: 10px;
   margin-left: 2px;
 }
+
+@media (max-width: 600px) {
+  .Messages-list {
+    margin-top: 20px;
+  }
+
+  .Messages-message.currentMember {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .Messages-message > .avatar {
+    margin: 0 -10px -10px 10px;
+  }
+
+  .Message-content > .text {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 400px) {
+  .Messages-list {
+    margin-top: 10px;
+    padding: 10px 0;
+  }
+
+  .Messages-message > .avatar {
+    height: 25px;
+    width: 25px;
+    margin: 0 -5px -10px 5px;
+  }
+
+  .Message-content > .text {
+    max-width: 150px;
+    font-size: 12px;
+  }
+}
