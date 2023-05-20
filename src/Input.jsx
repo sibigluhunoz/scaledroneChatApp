@@ -21,6 +21,14 @@ class Input extends Component {
       </div>
     );
   }
+  onChange(e) {
+    this.setState({text: e.target.value});
+  }
+  onSubmit(e) {
+    e.preventDefault();
+    this.setState({text: ""});
+    this.props.onSendMessage(this.state.text);
+  }
 }
 
 export default Input;

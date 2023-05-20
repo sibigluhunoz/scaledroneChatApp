@@ -1,30 +1,42 @@
 import React, { Component } from 'react';
 import './App.css';
 import Messages from "./Messages";
+import Input from "./Input";
 import { randomColor, randomName } from './RandomUser';
-import Input from "./Input"
-
 
 class App extends Component {
   state = {
-    messages: [
-      {
-        text: "This is a test message!",
-        member: {
-          color: "blue",
-          username: "bluemoon"
-        }
-      }
-    ],
+    messages: [],
     member: {
       username: randomName(),
-      color: randomColor()
+      color: randomColor(),
     }
   }
+  constructor() {
+    super();
+    this.drone = new window.Scaledrone("lRcFOeO2JAnt0gaZ", {
+      data: this.state.member
+    });
+    this.drone.on('open', error => {
+      if (error) {
+        return console.error(error);
+      }
+      const member = {...this.state.member};
+      member.id = this.drone.clientId;
+      this.setState({member});
+    });
+    const room = this.drone.subscribe("observable-room");
+    room.on('data', (data, member) => {
+      const messages = this.state.messages;
+      messages.push({member, text: data});
+      this.setState({messages});
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <Messages
+          <Messages
           messages={this.state.messages}
           currentMember={this.state.member}
         />
@@ -35,13 +47,14 @@ class App extends Component {
     );
   }
   onSendMessage = (message) => {
-    const messages = this.state.messages
-    messages.push({
-      text: message,
-      member: this.state.member
-    })
-    this.setState({messages: messages})
+    this.drone.publish({
+      room: "observable-room",
+      message
+    });
   }
+
+  
+
 }
 
 export default App;
