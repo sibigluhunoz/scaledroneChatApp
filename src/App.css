@@ -2,12 +2,16 @@
   font-family: monospace;
 }
 
+body {
+  background-image: url('400179.jpg');
+  height: calc(100vh - 80px);
+}
 .App {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
-  background-image: url("400179.jpg");
+  padding: 40px;
+  height: calc(100vh - 80px);
 }
 
 .Messages-list {
@@ -15,7 +19,6 @@
   max-width: 900px;
   width: 100%;
   margin: auto;
-  margin-top: 40px;
   list-style: none;
   padding-left: 0;
   flex-grow: 1;
@@ -23,6 +26,8 @@
   background-color: white;
   border: 3px solid black;
   border-radius: 8px;
+  height: calc(100vh - 80px - 90px);
+  overflow-y: scroll;
 }
 
 .Messages-message {
@@ -31,7 +36,6 @@
 }
 
 .Messages-message.currentMember {
-  /*justify-content: flex-end;*/
   flex-direction: row-reverse;
   text-align: right;
 }
@@ -79,7 +83,7 @@ form {
   width: 100%;
   justify-content: space-between;
   max-width: 900px;
-  margin: 0 auto 40px;
+  margin: 0px auto;
 }
 
 input {
@@ -89,7 +93,6 @@ input {
   border: 3px solid black;
   flex-grow: 1;
   margin-top: 13px;
-
 }
 
 button {
@@ -102,4 +105,33 @@ button {
   border-radius: 8px;
   margin-top: 13px;
   margin-left: 3px;
+}
+
+button:disabled {
+  background-color: gray;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(65, 2, 49);
+}
+
+.text-center {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+@media only screen and (max-width: 360px) {
+  .App {
+    padding: 16px;
+  }
+
+  .Messages-list {
+    height: calc(100vh - 145px);
+  }
 }

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 function Input(props) {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
 
   const onChange = (e) => {
     setText(e.target.value);
@@ -9,7 +9,7 @@ function Input(props) {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    setText("");
+    setText('');
     props.onSendMessage(text);
   };
 
@@ -20,10 +20,10 @@ function Input(props) {
           onChange={onChange}
           value={text}
           type="text"
-          placeholder="Enter your message and press ENTER or click Send"
+          placeholder="Enter your message"
           autoFocus={true}
         />
-        <button>Send</button>
+        <button disabled={text === ''}>Send</button>
       </form>
     </div>
   );

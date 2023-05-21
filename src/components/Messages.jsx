@@ -1,28 +1,29 @@
-import React from "react";
+import React from 'react';
 
 function Messages(props) {
   const { messages, currentMember } = props;
 
   const renderMessage = (message) => {
+    console.log('this is message', message);
     const { member, text, timestamp } = message;
     const messageFromMe = member.id === currentMember.id;
     const className = messageFromMe
-      ? "Messages-message currentMember"
-      : "Messages-message";
+      ? 'Messages-message currentMember'
+      : 'Messages-message';
 
-    let messageTime = "";
+    let messageTime = '';
     if (timestamp) {
       const dateObj = new Date(timestamp);
-      messageTime = dateObj.toLocaleTimeString("en-US", {
-        timeZone: "Europe/Zagreb",
-        hour: "numeric",
-        minute: "numeric",
-        second: "numeric",
+      messageTime = dateObj.toLocaleTimeString('en-US', {
+        timeZone: 'Europe/Zagreb',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
       });
     }
 
     return (
-      <li className={className}>
+      <li className={className} key={messageTime}>
         <span
           className="avatar"
           style={{ backgroundColor: member.clientData.color }}
@@ -37,9 +38,17 @@ function Messages(props) {
   };
 
   return (
-    <ul className="Messages-list">
-      {messages.map((message) => renderMessage(message))}
-    </ul>
+    <div>
+      {messages.length > 0 ? (
+        <ul className="Messages-list">
+          {messages.map((message) => renderMessage(message))}
+        </ul>
+      ) : (
+        <ul className="Messages-list">
+          <li className="text-center">Start typing...</li>
+        </ul>
+      )}
+    </div>
   );
 }
 
