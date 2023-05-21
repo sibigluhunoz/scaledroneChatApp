@@ -28,8 +28,9 @@ class App extends Component {
     const room = this.drone.subscribe("observable-room");
     room.on('data', (data, member) => {
       const messages = this.state.messages;
-      messages.push({member, text: data});
-      this.setState({messages});
+      const timestamp = new Date(); 
+      messages.push({ member, text: data, timestamp });
+      this.setState({ messages });
     });
   }
 

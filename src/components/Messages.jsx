@@ -10,9 +10,16 @@ function Messages(props) {
       ? "Messages-message currentMember"
       : "Messages-message";
 
-    const messageTime = new Date(timestamp).toLocaleTimeString("en-US", {
-      timeZone: "Europe/Zagreb",
-    });
+    let messageTime = "";
+    if (timestamp) {
+      const dateObj = new Date(timestamp);
+      messageTime = dateObj.toLocaleTimeString("en-US", {
+        timeZone: "Europe/Zagreb",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+      });
+    }
 
     return (
       <li className={className}>
@@ -31,10 +38,9 @@ function Messages(props) {
 
   return (
     <ul className="Messages-list">
-      {messages.map((m) => renderMessage(m))}
+      {messages.map((message) => renderMessage(message))}
     </ul>
   );
 }
 
 export default Messages;
-
