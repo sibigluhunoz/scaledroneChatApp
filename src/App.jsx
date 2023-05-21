@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Messages from "./components/Messages";
 import Input from "./components/Input";
-import { randomColor, randomName } from './components/RandomUser';
+import { randomColor, randomName } from './utils/RandomUser';
 
 class App extends Component {
   state = {
