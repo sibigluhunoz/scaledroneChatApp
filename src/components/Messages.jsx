@@ -10,6 +10,10 @@ function Messages(props) {
       ? "Messages-message currentMember"
       : "Messages-message";
 
+    const currentTime = new Date().toLocaleTimeString("en-US", {
+      timeZone: "Europe/Zagreb",
+    });
+
     return (
       <li className={className}>
         <span
@@ -19,6 +23,7 @@ function Messages(props) {
         <div className="Message-content">
           <div className="username">{member.clientData.username}</div>
           <div className="text">{text}</div>
+          <div className="time">{currentTime}</div>
         </div>
       </li>
     );
