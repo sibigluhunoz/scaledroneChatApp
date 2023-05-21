@@ -4,13 +4,13 @@ function Messages(props) {
   const { messages, currentMember } = props;
 
   const renderMessage = (message) => {
-    const { member, text } = message;
+    const { member, text, timestamp } = message;
     const messageFromMe = member.id === currentMember.id;
     const className = messageFromMe
       ? "Messages-message currentMember"
       : "Messages-message";
 
-    const currentTime = new Date().toLocaleTimeString("en-US", {
+    const messageTime = new Date(timestamp).toLocaleTimeString("en-US", {
       timeZone: "Europe/Zagreb",
     });
 
@@ -23,7 +23,7 @@ function Messages(props) {
         <div className="Message-content">
           <div className="username">{member.clientData.username}</div>
           <div className="text">{text}</div>
-          <div className="time">{currentTime}</div>
+          <div className="time">{messageTime}</div>
         </div>
       </li>
     );
@@ -37,3 +37,4 @@ function Messages(props) {
 }
 
 export default Messages;
+
