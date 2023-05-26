@@ -4,8 +4,8 @@ This is simple real-time chat app build with React.js and integrated with the Sc
 
 ## Tehnologies:
 
-React.js
-ScaleDrone
+. React.js
+. ScaleDrone
 
 ## instalation:
 
