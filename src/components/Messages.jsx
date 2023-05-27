@@ -4,7 +4,6 @@ function Messages(props) {
   const { messages, currentMember } = props;
 
   const renderMessage = (message) => {
-    console.log('this is message', message);
     const { member, text, timestamp } = message;
     const messageFromMe = member.id === currentMember.id;
     const className = messageFromMe
