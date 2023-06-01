@@ -11,15 +11,13 @@ function Messages(props) {
       : 'Messages-message';
 
     let messageTime = '';
-    if (timestamp) {
-      const dateObj = new Date(timestamp);
-      messageTime = dateObj.toLocaleTimeString('en-US', {
-        timeZone: 'Europe/Zagreb',
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric',
-      });
-    }
+    const dateObj = new Date(timestamp);
+    messageTime = dateObj.toLocaleTimeString('en-US', {
+      timeZone: 'Europe/Zagreb',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+    });
 
     return (
       <li className={className} key={messageTime}>
